@@ -37,7 +37,7 @@ It provides **real-time risk assessment** and **interactive disaster maps**, hel
 1. **Clone the Repository**
 
    ```bash
-   git clone [https://github.com/your-username/AI_Enhanced_MultiHazard_EarlyWarning_System.git(https://github.com/Praveen7-C/AI-Enhanced-Multi-Hazard-Early-Warning-System.git)
+   git clone https://github.com/Praveen7-C/AI-Enhanced-Multi-Hazard-Early-Warning-System.git
    cd AI_Enhanced_MultiHazard_EarlyWarning_System
    ```
 
