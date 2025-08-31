@@ -112,3 +112,4 @@ Special thanks to the following technologies and resources that made this projec
 * **Open Data Sources** (NOAA, NASA, UNDRR) → for hazard datasets.
 
 For any queries, contact: **[praveen.chinna0765@gmail.com](mailto:praveen.chinna0765@gmail.com)**
+
