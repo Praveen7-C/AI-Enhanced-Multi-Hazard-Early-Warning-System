@@ -2,33 +2,42 @@
 
 ## Overview
 
-The **AI Enhanced Multi-Hazard Early Warning System** is a Python-based project that leverages **Machine Learning and Geospatial Mapping** to predict, visualize, and analyze multiple disaster risks such as floods, earthquakes, wildfires, and storms.
-It provides **real-time risk assessment** and **interactive disaster maps**, helping governments, organizations, and communities to prepare for and respond to natural hazards effectively.
+The **AI Enhanced Multi-Hazard Early Warning System** is a Python-based project that leverages **Machine Learning, Geospatial Mapping, and Real-Time Weather Data** to predict, visualize, and analyze disaster risks such as **floods, droughts, and cyclones** in Indian cities.
+It provides **multi-output hazard predictions**, **interactive visualizations**, and a **Streamlit-powered web app** to help governments, organizations, and communities prepare for and respond to natural hazards effectively.
 
 ---
 
 ## Features
 
-* **Data Collection & Preprocessing:** Collects and processes disaster-related datasets from multiple sources.
-* **AI-Powered Prediction:** Uses Random Forest, Gradient Boosting, and Voting Classifier models for multi-hazard predictions.
-* **Multi-Hazard Risk Assessment:** Detects disaster categories (Flood, Earthquake, Wildfire, Storm).
-* **Interactive Disaster Maps:** Dynamic hazard visualization using **Folium** and **Plotly**.
-* **Performance Metrics:** Generates classification reports (Precision, Recall, F1-Score).
-* **Visualization Dashboard:** Charts and graphs for hazard analysis.
-* **Scalable Framework:** Can integrate with real-time APIs and satellite data.
+* **Real-Time Data Collection:** Fetches weather data (temperature, rainfall, wind speed) from the **Open-Meteo API**.
+* **Data Preprocessing & EDA:** Handles missing values, adds synthetic hazard labels, and performs **univariate, bivariate, and multivariate analyses** with Matplotlib & Seaborn.
+* **AI-Powered Prediction:** Uses an **ensemble of Random Forest and Gradient Boosting** with a **VotingClassifier** wrapped in **MultiOutputClassifier** for multi-hazard classification.
+* **Multi-Hazard Risk Assessment:** Predicts **Flood, Drought, Cyclone** probabilities for 30 Indian cities.
+* **Interactive Visualizations:**
+
+  * **Plotly** → hazard risk charts
+  * **Folium** → disaster risk maps (green: low, orange: medium, red: high)
+* **Model Persistence:** Saves and loads trained models with **Joblib**.
+* **Deployment Ready:** User-friendly **Streamlit app** for hazard prediction based on user inputs.
 
 ---
 
 ## Technologies Used
 
 * **Programming Language:** Python
+
 * **Libraries & Tools:**
 
+  * `requests` → Fetch weather data
   * `pandas`, `numpy` → Data preprocessing
-  * `scikit-learn` → Machine Learning models
-  * `matplotlib`, `plotly.express` → Data visualization
-  * `folium` → Interactive geospatial mapping
-  * `requests` → API data fetching
+  * `matplotlib`, `seaborn` → Exploratory Data Analysis (EDA)
+  * `scikit-learn` → ML models (RandomForest, GradientBoosting, VotingClassifier, MultiOutputClassifier)
+  * `plotly.express` → Interactive charts
+  * `folium` → Interactive maps
+  * `streamlit` → Web app deployment
+  * `joblib` → Save/load models
+
+* **Data Source:** Open-Meteo API (weather forecasts)
 
 ---
 
@@ -42,7 +51,6 @@ It provides **real-time risk assessment** and **interactive disaster maps**, hel
    ```
 
 2. **Install Required Packages**
-   Ensure Python 3.12, Jupyter Notebook, and Git are installed. Then install dependencies:
 
    ```bash
    pip install -r requirements.txt
@@ -56,8 +64,11 @@ It provides **real-time risk assessment** and **interactive disaster maps**, hel
    numpy
    scikit-learn
    matplotlib
+   seaborn
    plotly
    folium
+   streamlit
+   joblib
    ```
 
 3. **Launch Jupyter Notebook**
@@ -66,15 +77,23 @@ It provides **real-time risk assessment** and **interactive disaster maps**, hel
    jupyter notebook AI_Enhanced_MultiHazard_EarlyWarning_System.ipynb
    ```
 
+4. **Run Streamlit App**
+
+   ```bash
+   streamlit run app.py
+   ```
+
 ---
 
 ## Usage
 
-1. Load disaster dataset(s) into the notebook.
-2. Train ML models (Random Forest, Gradient Boosting, Voting Classifier).
-3. Generate predictions for multiple hazards.
-4. Visualize results using **interactive maps** and **charts**.
-5. Export disaster risk maps and reports.
+1. Fetch weather data for Indian cities using **Open-Meteo API**.
+2. Preprocess the dataset (handle missing values, encode features, add hazard labels).
+3. Train ensemble ML models (**RandomForest + GradientBoosting with VotingClassifier**).
+4. Evaluate using **classification reports, accuracy, and confusion matrices**.
+5. Visualize results with **EDA plots, Plotly charts, and Folium maps**.
+6. Save model using **Joblib** for deployment.
+7. Use the **Streamlit app** to input weather parameters and get hazard predictions.
 
 ---
 
@@ -82,7 +101,7 @@ It provides **real-time risk assessment** and **interactive disaster maps**, hel
 
 ```
 AI_Enhanced_MultiHazard_EarlyWarning_System/
-├── AI_Enhanced_MultiHazard_EarlyWarning_System.ipynb   # Main Jupyter Notebook
+├── AI_Enhanced_MultiHazard_EarlyWarning_System.ipynb   # Main Jupyter Notebook   
 ├── requirements.txt                                    # Python dependencies
 ├── README.md                                           # Project documentation
 ```
@@ -92,7 +111,7 @@ AI_Enhanced_MultiHazard_EarlyWarning_System/
 ## Contributing
 
 Contributions are welcome!
-If you have ideas for improvements (e.g., integrating real-time APIs, deep learning, or automated alerts), fork the repo and submit a pull request.
+If you have ideas for improvements (e.g., integrating real hazard datasets, adding humidity/wind direction, deep learning models, or SMS/mobile alert systems), fork the repo and submit a pull request.
 
 ---
 
@@ -104,12 +123,12 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 
 ## Acknowledgments
 
-Special thanks to the following technologies and resources that made this project possible:
+Special thanks to the following resources:
 
-* **scikit-learn** → for ML model training and evaluation.
-* **Folium & Plotly** → for interactive mapping and visualization.
-* **Pandas & NumPy** → for data preprocessing and analysis.
-* **Open Data Sources** (NOAA, NASA, UNDRR) → for hazard datasets.
+* **scikit-learn** → ML training & evaluation
+* **Folium & Plotly** → Interactive visualizations
+* **Pandas & NumPy** → Data preprocessing
+* **Open-Meteo API** → Weather data source
+* **Streamlit** → Model deployment
 
-For any queries, contact: **[praveen.chinna0765@gmail.com](mailto:praveen.chinna0765@gmail.com)**
-
+For queries, contact: **[praveen.chinna0765@gmail.com](mailto:praveen.chinna0765@gmail.com)**
