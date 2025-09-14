@@ -77,7 +77,7 @@ It provides **multi-output hazard predictions**, **interactive visualizations**,
    jupyter notebook AI_Enhanced_MultiHazard_EarlyWarning_System.ipynb
    ```
 
-4. **Run Streamlit App**
+4. **Run Streamlit App(inside the jupyter notebook)**
 
    ```bash
    streamlit run app.py
